@@ -1,7 +1,81 @@
-/*
-    home.css: This website contains selectors only used in home.css
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+  justify-content: space-between; /* Asegura que el contenido se distribuya bien */
+  overflow: hidden;
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+.title {
+  font-size: 1.2em; 
+  font-weight: 700;
+  text-align: center;
+  margin: 5px;
+  color: aliceblue;
+  white-space: nowrap;  
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+  max-width: 100%; 
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid coral;
+  border-radius: 1rem;
+  overflow: hidden; /* Para que el contenido no salga de la tarjeta */
+  padding: 10px; 
+}
+
+.flip-card-front {
+  background-size: cover;
+  background: linear-gradient(120deg, rgba(20, 20, 20, 0.534) 60%, rgba(116, 98, 92, 0.486) 88%, rgba(212, 179, 167, 0.548) 40%, rgba(41, 40, 40, 0.301) 48%);
+  color: coral;
+  margin-right: 20px;
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%, bisque 40%, rgb(255, 185, 160) 78%);
+  color: coral;
+  transform: rotateY(180deg);
+  background-size: cover;
+}
+
+.scroll-container {
+  overflow-x: auto;  /* Activa el scroll horizontal */
+  white-space: nowrap;  /* Evita que las tarjetas se envuelvan en varias filas */
+  justify-content: flex-start;  /* Alinea las tarjetas a la izquierda */
+
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+}

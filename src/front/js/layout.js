@@ -6,10 +6,15 @@ import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
+// import { Card } from "./component/card/card";
+import { CharacterInfo } from "./component/Modal/characterInfo";
+import { PlanetInfo } from "./component/Modal/planetInfo";
+import { VehicleInfo } from "./component/Modal/vehicleInfo";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -28,6 +33,9 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<VehicleInfo />} path="/vehicles/:vehicleId" />
+                        <Route  element={<CharacterInfo />} path="/characters/:characterId"/>
+                        <Route  element={<PlanetInfo />} path="/planets/:planetId" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
